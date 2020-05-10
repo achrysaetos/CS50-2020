@@ -1,0 +1,13 @@
+
+To Compile a C File
+-------------------
+type "clang week1.c" to start compilation. see now that there is a new file called "a.out".
+run "a.out" by typing "./a.out" into the terminal.
+
+alternatively, type "clang -o week1 week1.c" to tell clang to save the compiled output as week1
+then just run ./week1
+
+To Import a Library
+-------------------
+you also have to tell your compiler to add the special library file with something like 
+    "clang -o string week1-1.c -lcs50" where -l means link.
