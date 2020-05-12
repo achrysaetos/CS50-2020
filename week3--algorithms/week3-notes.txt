@@ -1,0 +1,18 @@
+
+Types of Searches and Big O
+---------------------------
+Common running times (in order of best to worst case): O(1), O(log n), O(n), O(n log n), O(n^2)
+You figure out the running time by looking at the dominant term.
+
+Linear search -- O(n)           start from the first item, end at the last item.
+Binary search -- O(log n)       half, determine whether to go left or right, half, determine again, etc.
+Bubble sort -- O(n^2)           look at the first two items and switch if necc, look at the second two items and switch if necc, 
+                                all the way to the end... then repeat n-1 times.
+Selection sort -- O(n^2)        go through the whole list and remember the smallest item, swap with the first list item,
+                                repeat with the rest of the list.
+Merge sort -- O(n log n)        sort left half of item, sort right half of items, merge.
+
+Other Types of Gauges
+---------------------
+Omega notation -- indicates best time
+Theta notation -- describes running time if the upper and lower bounds are the same

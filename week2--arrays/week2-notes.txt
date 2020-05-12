@@ -1,0 +1,6 @@
+
+Tools We Can Use
+----------------
+We can flag a line of code by putting a red dot next to the line number, and the debugger will know where to look.
+bool -- 1 byte, char -- 1 byte, int -- 4 bytes, float -- 4 bytes, long -- 8 bytes, double -- 8 bytes
+Arrays and strings both have lengths for you to iterate through.
