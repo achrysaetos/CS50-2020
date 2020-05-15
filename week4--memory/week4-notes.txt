@@ -1,0 +1,10 @@
+
+About Pointers
+--------------
+"char *string" implies a pointer at only the first character, ending with \0 that denotes the end of the string.
+    In other words, s[0], s[1], and so on maps directly to *s, *(s+1), and so on.
+    That's why when we do "string1 == string2", the output is false, because different strings are always stored in different locations.
+To make a copy of a string, we must use "malloc" and copy every character to a new location manually. 
+    The "strcpy" library function makes it easier, but the idea is the same.
+    Also, if we forget to copy the null terminating character "\0", if we tried to print out our string printf will just keep printing.
+
