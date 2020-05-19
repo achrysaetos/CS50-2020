@@ -7,3 +7,5 @@ Python doesn't use curly braces; nesting is instead determined by exact indentat
 
 Python doesn't have chars. So we use strings instead.
 Python strings are like C structs. We can use the dot operator with them.
+
+**Know Python's special syntaxes and availabilities. (ie. for loops, conditionals, printing, etc.)**
