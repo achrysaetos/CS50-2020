@@ -1,0 +1,9 @@
+
+Things to Note for Python
+-------------------------
+Python doesn't need to import a standard library, declare a main function, specify a new line, or use semicolons.
+Python is an interpreted language, which means we can run "python ___.py" without having to compile our program.
+Python doesn't use curly braces; nesting is instead determined by exact indentation of each line of code.
+
+Python doesn't have chars. So we use strings instead.
+Python strings are like C structs. We can use the dot operator with them.
