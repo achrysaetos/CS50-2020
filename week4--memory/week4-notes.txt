@@ -9,3 +9,10 @@ To make a copy of a string, we must use "malloc" and copy every character to a n
     Also, if we forget to copy the null terminating character "\0", if we tried to print out our string printf will just keep printing.
 We can also: swap strings using a temporary variable, use valgrind to check for memory leaks, open and close files, check jpeg file format, etc.
 
+Example Code
+------------
+int n=50;
+    printf("%p\n", &n); // & operator gets the address of the variable.
+    printf("%i\n", *&n); // * operator is a pointer that lets us go to the location of the variable.
+        //int *p = &n;
+        //printf("%p\n", p);
