@@ -1,0 +1,5 @@
+
+About SQL
+---------
+Beware of race conditions and sql injections!!!
+To prevent race conditions, we can use transactions. To prevent sql injections, we can use "?" placeholders.
