@@ -97,21 +97,14 @@ int main(int argc, string argv[])
 }
 
 
-
-
-//ONE GITHUB SOLUTION
-//---------------------------------------------------------------------------------------------------
+//To Do
+//-------------------------------------------------------------------------------------------------
 // Update ranks given a new vote
 bool vote(int rank, string name, int ranks[])
 {
-    // Loop through candidates array
-    for (int i = 0; i < candidate_count; i++)
-    {
-        // Check if name matches one of the candidates' name
-        if (!strcmp(candidates[i], name))
-        {
-            // If match: update ranks at rank index with candidates' index
-            ranks[rank] = i;
+    for (int i=0; i<candidate_count; i++){
+        if (candidates[i] == name){
+            ranks[rank]=i;
             return true;
         }
     }
@@ -121,18 +114,10 @@ bool vote(int rank, string name, int ranks[])
 // Update preferences given one voter's ranks
 void record_preferences(int ranks[])
 {
-    // preferences[row][col] represents the number of voters who prefer candidate row over candidate col
-    for (int i = 0; i < candidate_count; i++)
-    {
-        // Vote at position 0 is the highest and so on
+    for (int i = 0; i < candidate_count; i++){
         int highest_vote = ranks[i];
-        // Iteratation depends on highest_vote's position in the ranks array
-        // j starts at 1: we want to compare highest_vote with votes that are lower only
-        for (int j = 1; j < candidate_count - i; j++)
-        {
-            // Get vote lower than current highest_vote
+        for (int j = 1; j < candidate_count - i; j++){
             int lowest_vote = ranks[i + j];
-            // Update preferences where row = highest_vote and col = lowest_vote
             preferences[highest_vote][lowest_vote]++;
         }
     }
@@ -141,20 +126,12 @@ void record_preferences(int ranks[])
 // Record pairs of candidates where one is preferred over the other
 void add_pairs(void)
 {
-    // To iterate over rows
-    for (int i = 0; i < candidate_count; i++)
-    {
-        // To iterate over columns
-        for (int j = 0; j < candidate_count; j++)
-        {
-            // If value at preferences[row][col] is bigger value at preferences[col][row]
+    for (int i = 0; i < candidate_count; i++){
+        for (int j = 0; j < candidate_count; j++){
             if (preferences[i][j] > preferences[j][i])
             {
-                // Add winner i and loser j to pairs' array
-                // pairs is as big as pair_count
                 pairs[pair_count].winner = i;
                 pairs[pair_count].loser = j;
-                // Update global variable pair_count to be the total number of pairs
                 pair_count++;
             }
         }
@@ -164,17 +141,10 @@ void add_pairs(void)
 // Sort pairs in decreasing order by strength of victory
 void sort_pairs(void)
 {
-    // Use a sorting algorithm
-    // Iterate over pairs
-    for (int i = 0; i < pair_count; i++)
-    {
-        // Iterate over next pairs
-        for (int j = 1; j < pair_count - i; j++)
-        {
-            // If this pair's winner has less votes than the next one
-            if (preferences[pairs[i].winner][pairs[i].loser] < preferences[pairs[j].winner][pairs[j].loser])
-            {
-                // Swap the pairs
+    for (int i = 0; i < pair_count; i++){
+        for (int j = 1; j < pair_count - i; j++){
+            if (preferences[pairs[i].winner][pairs[i].loser] 
+                < preferences[pairs[j].winner][pairs[j].loser]){
                 pair temp = pairs[i];
                 pairs[i] = pairs[j];
                 pairs[j] = temp;
@@ -186,65 +156,23 @@ void sort_pairs(void)
 // Lock pairs into the candidate graph in order, without creating cycles
 void lock_pairs(void)
 {
-    // Iterate over every pair
-    for (int i = 0; i < pair_count; i++)
-    {
-        // Call recursive function for every pair to:
-        // Check for paths between loser and winner
-        if (!cycles(pairs[i].winner, pairs[i].loser))
-        {
-            // If no path, lock pair
+    for (int i = 0; i < pair_count; i++){
+        if (!locked[pairs[i].winner][pairs[i].loser]){
             locked[pairs[i].winner][pairs[i].loser] = true;
         }
-
     }
 }
 
 // Print the winner of the election
 void print_winner(void)
 {
-    // Winner is the source of the graph
-    // Iterate over rows of locked graph
-    for (int i = 0; i < candidate_count; i++)
-    {
-        // Initialize counter
+    for (int i = 0; i < candidate_count; i++){
         int counter = 0;
-        // Iterates over columns over locked graph
-        for (int j = 0; j < candidate_count; j++)
-        {
-            // Check if locked false
+        for (int j = 0; j < candidate_count; j++){
             if (!locked[j][i])
-            {
-                // If false, increment counter
                 counter++;
-            }
-            // If has more false or equal to number of pairs
-            // Candidate is winner, less edge, source of the graph
             if (counter >= pair_count)
-            {
                 printf("%s\n", candidates[i]);
-            }
         }
     }
-}
-
-// Recursive function to check for paths between loser and winner
-bool cycles(int winner, int loser)
-{
-    // If there is a path, return true
-    if (locked[loser][winner])
-    {
-        return true;
-    }
-    // Loop through locked table
-    for (int i = 0; i < pair_count; i++)
-    {
-        // Check for paths between loser and winner
-        if (locked[i][winner])
-        {
-            // If path, cycle over to return true
-            cycles(winner, i);
-        }
-    }
-    return false;
 }
