@@ -3,7 +3,7 @@
 
 // Convert image to grayscale
 void grayscale(int height, int width, RGBTRIPLE image[height][width])
-{/*
+{
     for(int i=0; i<height; i++){
         for(int j=0; j<width; j++){
             int a=floor((image[i][j].rgbtBlue+image[i][j].rgbtGreen+image[i][j].rgbtRed)/3);
@@ -11,13 +11,13 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
             image[i][j].rgbtGreen=a;
             image[i][j].rgbtRed=a;
         }
-    }*/
+    }
     return;
 }
 
 // Reflect image horizontally
 void reflect(int height, int width, RGBTRIPLE image[height][width])
-{/*
+{
     for(int i=0; i<height; i++){
         for(int j=0; j<width; j++){
        //     int tempb=image[i][j].rgbtBlue;
@@ -32,13 +32,13 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
             image[i][j].rgbtRed=image[i][width-j-1].rgbtRed;
        //     image[i][width-j-1].rgbtRed=tempr;
         }
-    }*/
+    }
     return;
 }
 
 // Blur image
 void blur(int height, int width, RGBTRIPLE image[height][width])
-{/*
+{
     for(int i=1; i<height-1; i++){
         for(int j=1; j<width-1; j++){
             image[i][j].rgbtBlue=floor((image[i+1][j].rgbtBlue+image[i-1][j].rgbtBlue+image[i][j+1].rgbtBlue+
@@ -51,13 +51,13 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                                 image[i][j-1].rgbtRed+image[i][j].rgbtRed+image[i+1][j+1].rgbtRed+
                                 image[i+1][j-1].rgbtRed+image[i-1][j+1].rgbtRed+image[i-1][j-1].rgbtRed)/9);
         }
-    }*/
+    }
     return;
 }
 
 // Detect edges
 void edges(int height, int width, RGBTRIPLE image[height][width])
-{/*
+{
     for(int i=1; i<height-1; i++){
         for(int j=1; j<width-1; j++){
             int bx= -1*image[i-1][j-1].rgbtBlue+    0*image[i-1][j].rgbtBlue+   1*image[i-1][j+1].rgbtBlue+
@@ -98,6 +98,6 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             }
 
         }
-    }*/
+    }
     return;
 }
