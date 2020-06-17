@@ -1,4 +1,3 @@
-
 //Uses Luhn's algorithm to validate card numbers
 #include <stdio.h>
 #include <math.h>
