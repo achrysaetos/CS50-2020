@@ -1,2 +1,2 @@
 repository of cs50 notes and psets
-Go To https://cs50.harvard.edu/x/2020/
+Go to https://cs50.harvard.edu/x/2020/

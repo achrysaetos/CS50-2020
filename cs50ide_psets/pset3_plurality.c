@@ -1,7 +1,3 @@
-
-//Simple count tally program
-//run with "make plurality" then "./plurality name1 name2 name3"
-
 #include <cs50.h>
 #include <stdio.h>
 #include <string.h>
@@ -98,4 +94,3 @@ void print_winner(void)
     }
     return;
 }
-
