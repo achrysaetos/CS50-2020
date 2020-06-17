@@ -27,8 +27,6 @@ elif index<16:
 else:
     print("GRADE LEVEL: 16+")
 
-
-
 #TEST CASES
 #One fish. Two fish. Red fish. Blue fish. (Before Grade 1)
 #Would you like them here or there? I would not like them here or there. I would not like them anywhere. (Grade 2)

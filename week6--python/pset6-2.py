@@ -1,4 +1,3 @@
-
 #mario blocks again, using python
 height = 0
 while height<1 or height>8:
