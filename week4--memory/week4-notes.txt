@@ -16,3 +16,4 @@ int n=50;
     printf("%i\n", *&n); // * operator is a pointer that lets us go to the location of the variable.
         //int *p = &n;
         //printf("%p\n", p);
+        
