@@ -1,4 +1,4 @@
 
-Data Structures (in order of worst to best runtime but best to worst memory requirement)
+Data Structures (in order of worst to best runtime, but best to worst memory requirement)
 ----------------------------------------------------------------------------------------
 Linked list, hash table, trie
