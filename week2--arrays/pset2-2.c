@@ -1,4 +1,3 @@
-
 //Encryption -- A maps to first letter of secret key, B maps to second letter, etc.
 #include <stdio.h>
 #include <string.h>

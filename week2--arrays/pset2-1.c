@@ -1,4 +1,3 @@
-
 // Recommends reading level based on the Coleman-Liau index
 #include <stdio.h>
 #include <string.h>
